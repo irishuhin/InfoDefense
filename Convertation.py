@@ -1,7 +1,7 @@
 def StrToVec(p):
 	p = p.replace('+', ' ')
 	p = p.split()
-	for i in xrange(len(p)):
+	for i in range(len(p)):
 		if p[i] == '1':
 			p[i] = 0
 		elif p[i] == 'x':
@@ -33,14 +33,14 @@ def ArrToStr(a):
 def VecToArr(v):
 	res = []
 	vec = v[::-1]
-	for i in xrange(len(v)):
+	for i in range(len(v)):
 		if vec[i] == 1:
 			res.append(i)
 	return res[::-1]
 
 def ArrToVec(a):
 	if len(a) > 0:
-		return [1 if i in a else 0 for i in xrange(max(a) + 1)][::-1]
+		return [1 if i in a else 0 for i in range(max(a) + 1)][::-1]
 	else:
 		return [0]
 
@@ -93,7 +93,7 @@ def NumToVec(n):
 	return vec
 
 def VecToNum(v):
-	return sum([2 ** i for i in xrange(len(v)) if v[-1 - i] == 1])
+	return sum([2 ** i for i in range(len(v)) if v[-1 - i] == 1])
 
 def StrToNum(s):
 	return ArrToNum(StrToArr(s))
